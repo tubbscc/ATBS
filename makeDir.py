@@ -4,7 +4,7 @@ import os
 
 # Set path before using for new pc or user
 #base_path = 'C:\\Users\\Casey\\Desktop\\ATBS'
-base_path = 'C:\\Users\\yi2845\\Documents\\P_Drive\\Project Work\\ETQ\\testdir'
+base_path = 'C:\\Users\\yi2845\\Documents\\P_Drive\\Project Work\\ETQ\\Promotions - Outages'
 folder1 = 'Backup'
 folder2 = 'Logs'
 folder3 = 'Master Data Info'
