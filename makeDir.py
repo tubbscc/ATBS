@@ -19,7 +19,7 @@ if not os.path.exists(base_path):
     print('base_path does not exist on this pc.')
     print('Make sure you have edited the base_path variable in this file before proceeding.')
     print('press enter to exit')
-    raw_input()
+    input()
     quit()
 
 # Try block to help validate for integer value
