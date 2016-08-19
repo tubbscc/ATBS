@@ -38,6 +38,9 @@ folder5 = 'Promotion File'
 folder6 = 'Testing'
 folder7 = 'Source'
 folder8 = 'Target'
+folder9 = 'Module Access'
+folder10 = 'localization'
+folder11 = 'props'
 
 def create_folder(new_folder):                                                                  # function to create new folder
     if not os.path.exists(newpath):
@@ -57,6 +60,11 @@ newpath_subs5 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder5
 newpath_subs6 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder6
 newpath_subs7 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder2 + '\\' + folder7
 newpath_subs8 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder2 + '\\' + folder8
+newpath_subs9 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1 + '\\' + folder9
+newpath_subs10 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1 + '\\' + folder7 + '\\' + folder10
+newpath_subs11 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1 + '\\' + folder7 + '\\' + folder11
+newpath_subs12 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1 + '\\' + folder8 + '\\' + folder10
+newpath_subs13 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1 + '\\' + folder8 + '\\' + folder11
 
 try:                                                                                            # try block to create sub-folders
     os.makedirs(newpath_subs1)
@@ -67,6 +75,11 @@ try:                                                                            
     os.makedirs(newpath_subs6)
     os.makedirs(newpath_subs7)
     os.makedirs(newpath_subs8)
+    os.makedirs(newpath_subs9)
+    os.makedirs(newpath_subs10)
+    os.makedirs(newpath_subs11)
+    os.makedirs(newpath_subs12)
+    os.makedirs(newpath_subs13)
 except OSError:
     pass
 
