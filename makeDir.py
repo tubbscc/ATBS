@@ -2,7 +2,31 @@
 
 import os
 
-try:                                                                                            # Try block to help validate for integer value
+# Set path before using for new pc or user
+#base_path = 'C:\\Users\\Casey\\Desktop\\ATBS'
+base_path = 'C:\\Users\\yi2845\\Documents\\P_Drive\\Project Work\\ETQ\\Promotions - Outages'
+folder1 = 'Backup'                                                                              # Setting values for folders to create
+folder2 = 'Logs'
+folder3 = 'Master Data Info'
+folder4 = 'Package Files'
+folder5 = 'Promotion File'
+folder6 = 'Testing'
+folder7 = 'Source'
+folder8 = 'Target'
+folder9 = 'Module Access'
+folder10 = 'localization'
+folder11 = 'props'
+
+# check for base path on this pc
+if not os.path.exists(base_path):
+    print('base_path does not exist on this pc.')
+    print('Make sure you have edited the base_path variable in this file before proceeding.')
+    print('press enter to exit')
+    input()
+    quit()
+
+# Try block to help validate for integer value
+try:
     print('This will create the standard set of folders for a new EtQ Reliance promotion')
     print('Select which environment to create new promotions folders')
     print('1 for Dev to QA')
@@ -10,11 +34,12 @@ try:                                                                            
 
     env_choice = int(input())
 
-    if env_choice == 1:
+    # Checking to see if user entered 1 or 2 which are valid options
+    if env_choice == 1:                                                                                                                                                                
         env_folder = 'Dev to QA'
     elif env_choice == 2:
      env_folder = 'QA to PROD'
-    elif env_choice != 1:                                                                       # Checking to see if user entered 1 or 2 which are valid options
+    elif env_choice != 1:
         print('Invalid choice')
         quit()
     elif env_choice !=2:
@@ -29,29 +54,18 @@ except ValueError:                                                              
 print('Date of promotion  example format  7-24-2016')
 prom_date = input()
 
-base_path = 'C:\\Users\\Casey\\Desktop\\ATBS'                                                   # Set path before using for new pc or user
-folder1 = 'Backup'                                                                              # Setting values for folders to create
-folder2 = 'Logs'
-folder3 = 'Master Data Info'
-folder4 = 'Package Files'
-folder5 = 'Promotion File'
-folder6 = 'Testing'
-folder7 = 'Source'
-folder8 = 'Target'
-folder9 = 'Module Access'
-folder10 = 'localization'
-folder11 = 'props'
-
-def create_folder(new_folder):                                                                  # function to create new folder
+# function to create new folder
+def create_folder(new_folder):
     if not os.path.exists(newpath):
         os.makedirs(newpath)
 
 #newpath = base_path + '\\' + prom_date + '\\' + env_folder
 #create_folder(newpath)
 
-newpath = base_path + '\\' + str(prom_date) + ' ' + env_folder
+newpath = base_path + '\\' + prom_date + ' ' + env_folder
 create_folder(newpath)
-                                                                                                # sub-folders to create
+
+# sub-folders to create
 newpath_subs1 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1
 newpath_subs2 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder2
 newpath_subs3 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder3
@@ -66,7 +80,8 @@ newpath_subs11 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder
 newpath_subs12 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1 + '\\' + folder8 + '\\' + folder10
 newpath_subs13 = base_path + '\\' + prom_date + ' ' + env_folder + '\\' + folder1 + '\\' + folder8 + '\\' + folder11
 
-try:                                                                                            # try block to create sub-folders
+# try block to create sub-folders
+try:
     os.makedirs(newpath_subs1)
     os.makedirs(newpath_subs2)
     os.makedirs(newpath_subs3)
@@ -90,4 +105,3 @@ except OSError:
 #print(prom_date)
 
 input("Finished...Press enter to continue")
-
